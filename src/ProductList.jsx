@@ -12,6 +12,10 @@ function ProductList() {
     const [showCart, setShowCart] = useState(false); 
     const [addedToCart, setAddedToCart] = useState({});
     const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
+    
+    useEffect(() => {
+        updateTotalQuantity(); // Update quantity when cart changes
+    }, [cart]);
 
     const plantsArray = [
         {
